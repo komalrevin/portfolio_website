@@ -126,3 +126,31 @@ section {
     flex-direction: column;
   }
 }
+
+#about,
+#projects,
+#skills,
+#education,
+#contact{
+  scroll-margin-top: 80px;
+}
+
+/* ===== FINAL MOBILE FIX (CORRECT UX) ===== */
+@media (max-width: 768px){
+
+  /* Navbar should NOT be sticky on mobile */
+  nav{
+    position: relative;
+    padding: 10px 0;
+  }
+
+  .nav-links{
+    flex-direction: row;          /* 👈 still horizontal */
+    gap: 14px;
+    flex-wrap: wrap;              /* 👈 next line if needed */
+  }
+
+  .nav-links a{
+    font-size: 14px;              /* 👈 smaller text */
+  }
+}
