@@ -24,14 +24,19 @@ nav{
   position: sticky;
   top: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-links{
   list-style: none;
-  display: flex;
+  display: flex;             /* 👈 horizontal */
   justify-content: center;
+  align-items: center;
+  gap: 30px;
   margin: 0;
   padding: 0;
+
 }
 
 .nav-links li{
@@ -348,5 +353,18 @@ h2::after{
   .btn{
     padding: 8px 16px;
     font-size: 14px;
+  }
+}
+
+/* ===== MOBILE NAVBAR ===== */
+@media (max-width: 768px){
+
+  .nav-links{
+    flex-direction: column;   /* 👈 vertical */
+    gap: 12px;
+  }
+
+  nav{
+    padding: 16px 0;
   }
 }
