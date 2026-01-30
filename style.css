@@ -24,13 +24,15 @@ nav{
   position: sticky;
   top: 0;
   z-index: 1000;
+
   display: flex;
   justify-content: center;
 }
 
 .nav-links{
   list-style: none;
-  display: flex;             /* 👈 horizontal */
+  display: flex;
+  flex-direction: row;   /* horizontal */
   justify-content: center;
   align-items: center;
   gap: 30px;
@@ -360,12 +362,16 @@ h2::after{
 @media (max-width: 768px){
 
   nav{
-    position: sticky;  /* 👈 top se nahi hatega */
+    position: sticky;      /* 👈 top par hi rahe */
     top: 0;
+    padding: 20px 0;
   }
 
   .nav-links{
-    flex-direction: column;   /* 👈 vertical */
+    flex-direction: column;    /* 👈 vertical */
+    align-items: center;       /* 👈 center horizontally */
+    justify-content: center;   /* 👈 center vertically (nav ke andar) */
     gap: 12px;
   }
 }
+
