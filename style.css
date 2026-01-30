@@ -359,12 +359,13 @@ h2::after{
 /* ===== MOBILE NAVBAR ===== */
 @media (max-width: 768px){
 
+  nav{
+    position: sticky;  /* 👈 top se nahi hatega */
+    top: 0;
+  }
+
   .nav-links{
     flex-direction: column;   /* 👈 vertical */
     gap: 12px;
-  }
-
-  nav{
-    padding: 16px 0;
   }
 }
