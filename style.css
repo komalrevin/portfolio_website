@@ -259,4 +259,60 @@ section {
   }
 }
 
+/* ===============================
+   FINAL PHONE FIX – CONTACT SECTION
+================================ */
+@media (max-width: 768px){
+
+  /* 🔹 CONTACT SECTION */
+  #contact{
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  /* 🔹 CONTACT BOX */
+  .contact-box{
+    padding: 28px;
+    max-width: 100%;
+  }
+
+  /* 🔹 CONTACT HEADING */
+  #contact h2{
+    font-size: 24px;
+  }
+
+  /* 🔹 UNDERLINE WAPAS LANA (PHONE) */
+  #contact h2::after{
+    content: "";
+    display: block;
+    width: 75%;
+    max-width: 160px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1abc9c, #00c6ff);
+  }
+
+  /* 🔹 CONTACT LINKS VISIBILITY FIX */
+  .contact-box p{
+    font-size: 16px;
+    margin: 12px 0;
+  }
+
+  .contact-box a{
+    color: #00e5ff;
+    font-weight: 600;
+    word-break: break-word;
+    text-decoration: underline;
+  }
+
+  /* 🔹 ROBOT FLOAT (PHONE FORCE) */
+  .robot img{
+    width: 200px;
+    animation: float 4s ease-in-out infinite !important;
+    will-change: transform;
+  }
+}
+
+
 
