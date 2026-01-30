@@ -1,170 +1,352 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Komal Kumari | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* ===============================
+   GLOBAL SETTINGS
+================================ */
+html{
+  scroll-behavior: smooth;
+}
 
-</head>
-<body>
+body{
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background:
+    radial-gradient(circle at left top, rgba(26,188,156,0.18), transparent 40%),
+    radial-gradient(circle at right bottom, rgba(52,152,219,0.18), transparent 40%),
+    linear-gradient(135deg, #f0f2f5, #e6ebf2);
+  min-height: 100vh;
+  margin: 0;
+}
 
+/* ===============================
+   NAVBAR
+================================ */
+nav{
+  background-color: #232f3b;
+  padding: 12px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
+.nav-links{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
 
-    <!-- NAVBAR -->
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
+.nav-links li{
+  margin: 0 15px;
+}
 
-    <!-- HOME -->
-    <section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Hi, I’m <span>Komal Kumari</span></h1>
-        <h3>Associate Programmer Analyst | Data Science Learner</h3>
-        <p>
-            I build real-world projects and continuously improve my skills
-            in backend development, data science, and problem solving.
-        </p>
+.nav-links li a{
+  color: #f0f1f5;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+}
 
-        <a href="KomalKumariResume.pdf" class="btn" download>Download Resume</a>
-        <a href="#projects" class="btn secondary">
-            View Projects
-        </a>
-    </div>
+.nav-links li a::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #1abc9c;
+  transition: width 0.3s ease;
+}
 
-        
+.nav-links li a:hover::after{
+  width: 100%;
+}
 
+/* HAMBURGER */
+.menu-toggle{
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
 
-    <div class="hero-image">
-        <img src="profile.jpg.jpeg" alt="Komal Photo">
-    </div>
-</section>
+/* ===============================
+   SECTIONS (COMMON)
+================================ */
+section{
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 35px;
+  border-radius: 16px;
+  background-color: #f5f7fa;
+  line-height: 1.7;
+  animation: fadeUp 0.8s ease both;
+}
 
+h1, h2{
+  color: #151c2d;
+}
 
-    <!-- ABOUT -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a BCA graduate and Associate Programmer Analyst with a strong interest
-            in backend development and data science. I have hands-on experience in C, C++,
-            Python, and SQL. I actively work on projects to strengthen my technical knowledge
-            and problem-solving skills. I enjoy analyzing data, building solutions, and
-            continuously learning new technologies. I also believe in teamwork, clear
-            communication, and practical learning.
-        </p>
-    </section>
+h2{
+  font-size: 26px;
+  margin-bottom: 15px;
+}
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <div class="projects-container">
+h2::after{
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #1abc9c;
+  display: block;
+  margin-top: 6px;
+}
 
-    <div class="project-card">
-        <h3>AI BCA Academic Assistant</h3>
-        <p>
-            AI chatbot that answers previous year papers using React,
-            FastAPI, and Groq models with online & offline modes.
-        </p>
-        <span>React • FastAPI • AI</span>
-    </div>
+/* ===============================
+   HERO SECTION
+================================ */
+.hero{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: linear-gradient(135deg, #eef2f7, #f9fbff);
+}
 
-    <div class="project-card">
-        <h3>Data Cleaning & Insights Project</h3>
-        <p>
-            Generated insights from Aadhaar datasets using Python,
-            Pandas, Matplotlib, and Power BI.
-        </p>
-        <span>Python • Pandas • Power BI</span>
-    </div>
+.hero-content{
+  flex: 1;
+}
 
-</div>
+.hero h1{
+  font-size: 40px;
+}
 
-    </section>
+.hero h1 span{
+  color: #1abc9c;
+}
 
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>Skills</h2>
+.hero h3{
+  font-weight: normal;
+  color: #555;
+  margin-bottom: 15px;
+}
 
-        <h4>Languages</h4>
-        <p>
-        <span>C</span>
-        <span>C++</span>
-        <span>Python</span>
-        <span>SQL</span>
-        </p>
+.hero p{
+  color: #666;
+  max-width: 500px;
+}
 
+.hero-image img{
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #1abc9c;
+}
 
-        <h4>Frameworks & Libraries</h4>
-        <span>Django</span>
-        <span>Pandas</span>
-        <span>Numpy</span>
-        
+/* ===============================
+   BUTTONS
+================================ */
+.btn{
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #1abc9c;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
 
-        <h4>Tools</h4>
-        <span>Git</span>
-        <span>Github</span>
-        <span>Power BI</span>
-        
+.btn:hover{
+  background-color: #16a085;
+}
 
-        <h4>Qualities</h4>
-        <p>Leadership, Communication, Problem Solving, Analytical Thinking, Team Collaboration</p>
-    </section>
+.btn.secondary{
+  background: transparent;
+  color: #1abc9c;
+  border: 2px solid #1abc9c;
+  margin-left: 10px;
+}
 
-    <!-- EDUCATION -->
-    <section id="education">
-        <h2>Education</h2>
-        <p><strong>College of Commerce, Arts & Science</strong></p>
-        <p>BCA – 3rd Year</p>
-    </section>
+.btn.secondary:hover{
+  background: #1abc9c;
+  color: white;
+}
 
-    <!-- CONTACT -->
-    <section id="contact">
-  <div class="contact-container">
+/* ===============================
+   PROJECTS
+================================ */
+.projects-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
 
-    <!-- CONTACT BOX -->
-    <div class="contact-box">
-      <h2>Contact Me</h2>
+.project-card{
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-      <p>📞 +91 xxxxxxx</p>
+.project-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
 
-      <p>
-        📧 <a href="mailto:komalkumari142006@gmail.com">
-        komalkumari142006@gmail.com</a>
-      </p>
+.project-card span{
+  display: inline-block;
+  margin-top: 10px;
+  color: #1abc9c;
+  font-weight: bold;
+}
 
-      <p>
-        🔗 <a href="https://www.linkedin.com/in/komal-kumari-08697830a" target="_blank">
-        LinkedIn Profile</a>
-      </p>
+/* ===============================
+   SKILLS
+================================ */
+#skills p{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-      <p>
-  💻 <a href="https://github.com/komalrevin" target="_blank">
-        View Code on GitHub </a>
-    </p>
+#skills p span{
+  background: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
 
-      <p>📍 Patna, Bihar</p>
-    </div>
+/* ===============================
+   CONTACT SECTION
+================================ */
+#contact{
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
 
-    <!-- 3D ROBOT -->
-    <div class="robot">
-      <img src="robot.png" alt="3D AI Robot">
-    </div>
+.contact-container{
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-  </div>
-</section>
+.contact-box{
+  background: rgba(255,255,255,0.12);
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.35);
+  max-width: 400px;
+}
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Komal Kumari | All Rights Reserved</p>
-    </footer>
+.contact-box a{
+  color: #00e5ff;
+  text-decoration: none;
+}
 
+.robot img{
+  width: 260px;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 25px 35px rgba(0,0,0,0.6));
+}
 
-</body>
-</html>
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes float{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-18px); }
+  100%{ transform: translateY(0); }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px){
+
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .menu-toggle{
+    display: block;
+  }
+
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #232f3b;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 15px 0;
+  }
+
+  .nav-links.show{
+    display: flex;
+  }
+
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img{
+    width: 180px;
+    height: 180px;
+    margin-top: 20px;
+  }
+
+  section{
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .projects-container{
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container{
+    flex-direction: column;
+  }
+
+  .robot img{
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px){
+  .hero h1{
+    font-size: 26px;
+  }
+
+  .hero h3{
+    font-size: 16px;
+  }
+
+  .btn{
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
