@@ -375,3 +375,22 @@ h2::after{
   }
 }
 
+/* ===== FORCE MOBILE NAVBAR VERTICAL CENTER ===== */
+@media screen and (max-width: 768px){
+
+  nav{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .nav-links{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+}
